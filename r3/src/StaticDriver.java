@@ -58,11 +58,11 @@ public class StaticDriver {
         System.out.println("[RightElevator] Current Floor: " + rightElevator.getCurrentFloor());
         System.out.println("-----------------------");
 
-        // move left elevator back to the base floor
+//        // move left elevator back to the base floor
         leftElevator.moveToBaseFloor();
         System.out.println("[LeftElevator] Current Floor: " + leftElevator.getCurrentFloor());
         System.out.println("-----------------------");
-
+//
         double forceNeeded = Elevator.computeForceToElevate(new double[]{165.3, 176.4, 90.3});
         System.out.println("Force needed to elevate the an elevator: " + forceNeeded);
     }

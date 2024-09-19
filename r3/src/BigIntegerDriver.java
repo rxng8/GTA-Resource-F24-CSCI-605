@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class BigIntegerDriver {
@@ -19,13 +20,15 @@ public class BigIntegerDriver {
         BigInteger A, B;
         a = 54;
         b = 23;
-        A  = BigInteger.valueOf(54);
-        // B  = BigInteger.valueOf(127361729639812730817203); // this will not work
-        A  = new BigInteger("54");
-        B  = new BigInteger("123456789123456789");
+//        A = BigInteger.valueOf(54);
+//        B  = BigInteger.valueOf("12736172963981273081723"); // this will not work
+        A = new BigInteger("54");
+        B = new BigInteger("12345678912345671289");
 
-        System.out.println(A.multiply(B));
-        System.out.println(A.add(B));
+//        System.out.println(B);
+
+        System.out.println(B.add(A));
+//        System.out.println(A.add(B));
 
     }
 }

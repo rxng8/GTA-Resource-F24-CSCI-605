@@ -29,5 +29,7 @@ public class PrintClass {
     public static void main(String[] args) {
         SingleInteger myInteger = new SingleInteger(4);
         System.out.println(myInteger.toString());
+//        Object o = new Object();
+//        System.out.println(o);
     }
 }
