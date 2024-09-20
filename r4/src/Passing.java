@@ -52,6 +52,8 @@ public class Passing {
          * inside the method won't affect the original array.
          */
         arr[0] = 42;
+        arr[1] = 42;
+        arr[2] = 42;
     }
 
     static void changeRef(MyObject obj) {
@@ -85,35 +87,35 @@ public class Passing {
     }
 
     public static void main(String[] args) {
-        int x1;
-        x1 = 0;
-        System.out.println("[Before changing] x1: " + x1);
-        changeVal(x1);
-        System.out.println("[After changing] x1: " + x1);
+//        int x1;
+//        x1 = 0;
+//        System.out.println("[Before changing] x1: " + x1);
+//        changeVal(x1);
+//        System.out.println("[After changing] x1: " + x1);
 
-        String x2;
-        x2 = "hello";
-        System.out.println("[Before changing] x2: " + x2);
-        changeRef(x2);
-        System.out.println("[After changing] x2: " + x2);
-
-        int[] arr1;
-        arr1 = new int[]{0, 0, 0};
-        System.out.println("[Before changing] arr1: " + arrString(arr1));
-        changeRef(arr1);
-        System.out.println("[After changing] arr1: " + arrString(arr1));
-
-        int[] arr2;
-        arr2 = new int[]{0, 0, 0};
-        System.out.println("[Before changing] arr2: " + arrString(arr2));
-        changeVal(arr2);
-        System.out.println("[After changing] arr2: " + arrString(arr2));
-
-        MyObject obj1 = new MyObject(0);
-        System.out.println("[Before changing] obj1: " + obj1.toString());
-        changeRef(obj1);
-        System.out.println("[After changing] obj1: " + obj1.toString());
-
+//        String x2;
+//        x2 = "hello";
+//        System.out.println("[Before changing] x2: " + x2);
+//        changeRef(x2);
+//        System.out.println("[After changing] x2: " + x2);
+//
+//        int[] arr1;
+//        arr1 = new int[]{0, 0, 0};
+//        System.out.println("[Before changing] arr1: " + arrString(arr1));
+//        changeRef(arr1);
+//        System.out.println("[After changing] arr1: " + arrString(arr1));
+//
+//        int[] arr2;
+//        arr2 = new int[]{0, 0, 0};
+//        System.out.println("[Before changing] arr2: " + arrString(arr2));
+//        changeVal(arr2);
+//        System.out.println("[After changing] arr2: " + arrString(arr2));
+//
+//        MyObject obj1 = new MyObject(0);
+//        System.out.println("[Before changing] obj1: " + obj1.toString());
+//        changeRef(obj1);
+//        System.out.println("[After changing] obj1: " + obj1.toString());
+//
         MyObject obj2 = new MyObject(0);
         System.out.println("[Before changing] obj2: " + obj2.toString());
         changeVal(obj2);
