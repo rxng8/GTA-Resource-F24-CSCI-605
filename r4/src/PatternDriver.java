@@ -12,12 +12,14 @@ public class PatternDriver {
         // Checking for a match and find
         System.out.println("Pattern matched for target `" + target
                 + "`: " + (matcher.matches() ? "Yes" : "No"));
+        System.out.println("Pattern found in target `" + target
+                + "`: " + (matcher.find() ? "Yes" : "No"));
         System.out.println("=============================\n");
     }
 
     // Main driver method
     public static void main(String[] args) {
-        process("[a-zA-Z]*", "hello");
-        process("[a-zA-Z]*", "hello!");
+        process("^([ab]?|c?)$", "ac");
+        //process("[a-zA-Z]*", "hello!");
     }
 }
