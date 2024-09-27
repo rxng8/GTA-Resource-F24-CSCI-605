@@ -1,6 +1,3 @@
-import com.sun.jdi.connect.Transport;
-
-import javax.crypto.ShortBufferException;
 
 class Transporter {
 
@@ -124,6 +121,11 @@ public class InheritanceDriver {
         car1 = new Car(4, "4 wheels", "Volvo");
         car1.move(4);
         //car1.honk(); // Again, this does not work.
+
+        /**
+         * The reason why we would want to say Transporter = new Car()
+         *  is for polymorphism.
+         */
 
     }
 }
