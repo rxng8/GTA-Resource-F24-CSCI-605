@@ -25,9 +25,14 @@ class Vehicle extends Transporter {
     public void honk() {
         System.out.println("Vehicle honks.");
     }
+
+    @Override
+    public void move(double distance) {
+        super.move(distance + 2.0);
+    }
 }
 
-class Animal extends Transporter{
+class Animal extends Transporter {
 
     public String animalType;
 
@@ -39,6 +44,10 @@ class Animal extends Transporter{
     public void makeSound() {
         System.out.println("Animal makes sound.");
     }
+
+//    public void makeSound(boolean humanSlap) {
+//        System.out.println("None");
+//    }
 }
 
 class Car extends Vehicle {
@@ -85,6 +94,7 @@ class Horse extends Animal {
         System.out.println("Horse: Hee Hee");
     }
 
+//    @Override
     public void makeSound(boolean humanSlap) {
         System.out.println(humanSlap ? "Horse: Heeeeeeeeeeeeeeeeee": "Horse: Hee Hee");
     }
@@ -106,7 +116,7 @@ public class InheritanceDriver {
          * This will not work, because at compile time,
          * object `horse1` does not have the method signature for this method!
          */
-        //horse1.makeSound(true);
+//        horse1.makeSound(true);
 
         /*************************************/
         Horse horse2 = new Horse(3, "4 legs", "crocodile horse");
@@ -115,7 +125,7 @@ public class InheritanceDriver {
 
         /*************************************/
         // Compile Time
-        Transporter car1;
+        Car car1;
 
         // Run Time
         car1 = new Car(4, "4 wheels", "Volvo");
@@ -126,6 +136,30 @@ public class InheritanceDriver {
          * The reason why we would want to say Transporter = new Car()
          *  is for polymorphism.
          */
+
+        // This will not work
+//        Car[] allTransporters = new Car[]{
+//                new Car(5, "4 wheels", "BMW"),
+//                new Horse(2, "4 legs", "dragon horse")
+//        };
+
+        Transporter[] allTransporters = new Transporter[]{
+                new Car(5, "4 wheels", "BMW"),
+                new Horse(2, "4 legs", "dragon horse")
+        };
+
+        for (Transporter t : allTransporters) {
+            t.move(5.4);
+        }
+
+        Vehicle[] allVehicles = new Vehicle[]{
+                new Car(5, "4 wheels", "BMW"),
+                new Motorbike(3, "2 wheels", "Vespa")
+        };
+
+        for (Vehicle v : allVehicles) {
+            v.honk(); // Example of polymorphism
+        }
 
     }
 }

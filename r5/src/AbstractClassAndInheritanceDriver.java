@@ -16,7 +16,7 @@ interface RunnableVehicle {
     }
 }
 
-// Abstract Class: Car
+// Abstract Class: AbstractCar
 abstract class AbstractCar {
     // Field (state)
     String brand;
@@ -72,9 +72,9 @@ public class AbstractClassAndInheritanceDriver {
         Tesla myTesla = new Tesla("Tesla");
 
         // Calling methods
-        myTesla.drive();  // From abstract class Car
-        myTesla.move();   // From interface Vehicle
-        myTesla.fuelUp(); // Default method from interface Vehicle
-        myTesla.stop();   // Non-abstract method from abstract class Car
+        myTesla.drive();  // From abstract class AbstractCar
+        myTesla.move();   // From interface VehicleRunnable
+        myTesla.fuelUp(); // Default method from interface VehicleRunnable
+        myTesla.stop();   // Non-abstract method from abstract class AbstractCar
     }
 }
