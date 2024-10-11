@@ -2,7 +2,7 @@
  * We will model:
  *     Animals that fly naturally (e.g., birds).
  *     Animals that use echolocation while flying (e.g., bats).
- *     Mechanical entities that fly artificially (e.g., airplanes).
+ *     Mechanical entities that fly artificially (e.g., airplanes, UFO).
  */
 // Interface for Flyable animals and objects
 interface Flyable {
@@ -68,7 +68,6 @@ class Bird implements WingedFlyer {
         System.out.println("Bird is flapping its wings...");
     }
 }
-
 
 // Rememebr: Bat implements both WingedFlyer and EcholocationFlyer because it flies with wing and echo
 class Bat implements WingedFlyer, EcholocationFlyer {

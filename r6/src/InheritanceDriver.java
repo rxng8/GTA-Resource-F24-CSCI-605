@@ -110,9 +110,10 @@ public class InheritanceDriver {
     public static void main(String[] args) {
 
         // Compile Time
-        Animal horse1;
+        // Have: variables: animalType, methods: Animal(...), makeSound()
+        Animal horse1; // this object has the `reference type` of Animal
 
-        // Run Time
+        // Run Time: `actual type` is Horse
         horse1 = new Horse(3, "4 legs", "dragon horse");
         horse1.makeSound();
 
@@ -120,7 +121,7 @@ public class InheritanceDriver {
          * This will not work, because at compile time,
          * object `horse1` does not have the method signature for this method!
          */
-//        horse1.makeSound(true);
+        //horse1.makeSound(true);
 
         /*************************************/
         Horse horse2 = new Horse(3, "4 legs", "crocodile horse");
@@ -134,7 +135,7 @@ public class InheritanceDriver {
         // Run Time
         car1 = new Car(4, "4 wheels", "Volvo");
         car1.move(4);
-        //car1.honk(); // Again, this does not work.
+        car1.honk();
 
         /**
          * The reason why we would want to say Transporter = new Car()
@@ -146,6 +147,8 @@ public class InheritanceDriver {
 //                new Car(5, "4 wheels", "BMW"),
 //                new Horse(2, "4 legs", "dragon horse")
 //        };
+        // For all the transporters, move by 6 units
+
 
         Transporter[] allTransporters = new Transporter[]{
                 new Car(5, "4 wheels", "BMW"),
@@ -165,9 +168,22 @@ public class InheritanceDriver {
             v.honk(); // Example of polymorphism
         }
 
+
+//        System.out.println("===========================");
+
+        // `Reference Type` -- declared -- in compile time
+        // object will ONLY have variables and methods of the reference type
+        // `Actual Type` -- constructed with -- in run time
+//        Vehicle car3 = new Car(4, "4 wheels", "Volvo");
+//        System.out.println(car3.machineType);
+//        Car casted_car3 = (Car) car3;
+//        System.out.println(casted_car3.carModel);
+
+        System.out.println("===========================");
+
         // Upcasting
         Vehicle[] allVehicles2 = new Vehicle[2];
-        Car car3 = new Car(3, "4 wheels", "Volvo");
+        Vehicle car3 = new Car(3, "4 wheels", "Volvo");
         allVehicles2[0] = car3;
         Vehicle upcastedCar3 = (Vehicle) car3; // up casting can be omitted
         allVehicles2[1] = upcastedCar3;
