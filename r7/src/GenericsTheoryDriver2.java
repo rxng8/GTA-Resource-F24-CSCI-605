@@ -54,11 +54,14 @@ class DefaultDict<K, V> {
 public class GenericsTheoryDriver2 {
     public static void main(String[] args) {
 
-        DefaultDict<String, Integer> flexibleCounter = new DefaultDict<>(0);
+        // This will not work
+//        HashMap<String, Integer> map = new HashMap<>();
+//        int value = map.get("foo");
+//        System.out.println(value);
+
+        DefaultDict<String, Integer> flexibleCounter = new DefaultDict<>(134);
 
         System.out.println(flexibleCounter);
-
-//        flexibleCounter.put("hello", fle);
 
         System.out.println(flexibleCounter.get("timer1"));
         System.out.println(flexibleCounter);

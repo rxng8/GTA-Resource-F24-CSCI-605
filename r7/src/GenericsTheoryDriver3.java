@@ -6,6 +6,9 @@ class Tensor<T extends Number> {
     private T[] data;
     private int[] shape;
 
+    // For example, a tensor can be
+    private int[][][][][][] someArray = new int[10][12][14][67][2][3]; // with shape (10, 12, 14, 67, 2, 3)
+
     public Tensor(Class<T> typeClass, int... shape) {
         this.shape = shape;
         int size = 1;
@@ -25,7 +28,7 @@ class Tensor<T extends Number> {
     // Get value at a specific index
     public T get(int... indices) {
         int flatIndex = getFlatIndex(indices);
-        return (T) data[flatIndex];
+        return data[flatIndex];
     }
 
     public T[] getData() {
@@ -123,6 +126,8 @@ class Operator {
         for (int i = 0; i < a.getData().length; i++) {
             T value1 = a.getData()[i];
             T value2 = b.getData()[i];
+            // intuition
+            //T newValue = (T) (Long) ((Long) value1 + (Long) value2);
             T newValue;
             if (value1 instanceof Long || value2 instanceof Long) {
                 newValue = (T) (Long) ((Long) value1 + (Long) value2);
