@@ -9,7 +9,7 @@ public class FinallyDriver {
                 System.out.println("In try block " + i);
             } catch (Exception e) {
                 System.out.println("In catch block: " + e.getMessage());
-                break;
+                return;
             }
         }
         System.out.println("Print number end!");
@@ -27,7 +27,6 @@ public class FinallyDriver {
                 System.out.println("Finally block: This is guaranteed to be executed. Block " + i);
             }
         }
-        System.out.println("Print number end!");
     }
 
     public static void main(String[] args) {

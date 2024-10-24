@@ -108,60 +108,67 @@ public class GenericsTheoryDriver {
 
     public static void main(String[] args) {
 
-        ArrayList<Building> listBuilding = new ArrayList<>();
-        printBuilding(listBuilding);
-
-        ArrayList<House> listHouse = new ArrayList<>();
-        printBuilding(listHouse);
-
-        // Note: In Parameter type we can not use primitives like ‘int’,’char’ or ‘double’.
-        // Create an array of Integer
-        GenericArray<Integer> intArray = new GenericArray<>(5);
-        intArray.set(0, 10);
-        intArray.set(1, 20);
-        System.out.println("First element: " + intArray.get(0));
-        System.out.println("Second element: " + intArray.get(1));
-
-        // Create an array of String
-        GenericArray<String> strArray = new GenericArray<>(3);
-        strArray.set(0, "Hello");
-        strArray.set(1, "World");
-        System.out.println("First element: " + strArray.get(0));
-        System.out.println("Second element: " + strArray.get(1));
-
-        // print array
-        intArray.printArray();
-        strArray.printArray();
-
-        // print array using generic method
-        GenericArray.printArray(intArray.getArray());
-        GenericArray.printArray(strArray.getArray());
-
-        // Bounded generics
-        System.out.printf("Max of %d, %d and %d is %d\n\n",
-                3, 4, 5, maximum( 3, 4, 5 ));
-
-        System.out.printf("Max of %.1f,%.1f and %.1f is %.1f\n\n",
-                6.6, 8.8, 7.7, maximum( 6.6, 8.8, 7.7 ));
-
-        System.out.printf("Max of %s, %s and %s is %s\n","pear",
-                "apple", "orange", maximum("pear", "apple", "orange"));
-
-        // List of `"whatever" type that extends integer` objects
-        List<? extends Integer> list;
-
-        // Using different types for the parameters
-        printPair(1, "One");
-        printPair("Key", 12345);
-        printPair(3.14, true);
+//        ArrayList<Building> listBuilding = new ArrayList<>();
+//        printBuilding(listBuilding);
+//
+//        ArrayList<House> listHouse = new ArrayList<>();
+//        printBuilding(listHouse);
+//
+//        // Note: In Parameter type we can not use primitives like ‘int’,’char’ or ‘double’.
+//        // Create an array of Integer
+//        GenericArray<Integer> intArray = new GenericArray<>(5);
+//        intArray.set(0, 10);
+//        intArray.set(1, 20);
+//        System.out.println("First element: " + intArray.get(0));
+//        System.out.println("Second element: " + intArray.get(1));
+//
+//        // Create an array of String
+//        GenericArray<String> strArray = new GenericArray<>(3);
+//        strArray.set(0, "Hello");
+//        strArray.set(1, "World");
+//        System.out.println("First element: " + strArray.get(0));
+//        System.out.println("Second element: " + strArray.get(1));
+//
+//        // print array
+//        intArray.printArray();
+//        strArray.printArray();
+//
+//        // print array using generic method
+//        GenericArray.printArray(intArray.getArray());
+//        GenericArray.printArray(strArray.getArray());
+//
+//        // Bounded generics
+//        System.out.printf("Max of %d, %d and %d is %d\n\n",
+//                3, 4, 5, maximum( 3, 4, 5 ));
+//
+//        System.out.printf("Max of %.1f,%.1f and %.1f is %.1f\n\n",
+//                6.6, 8.8, 7.7, maximum( 6.6, 8.8, 7.7 ));
+//
+//        System.out.printf("Max of %s, %s and %s is %s\n","pear",
+//                "apple", "orange", maximum("pear", "apple", "orange"));
+//
+//        // List of `"whatever" type that extends integer` objects
+//        List<? extends Integer> list;
+//
+//        // Using different types for the parameters
+//        printPair(1, "One");
+//        printPair("Key", 12345);
+//        printPair(3.14, true);
 
 
         // Lower bound generics example
+        List<Cat> catList = new ArrayList<>();
+        List<Dog> dogList = new ArrayList<>();
         List<Animal> animalList = new ArrayList<>();
         List<Object> objectList = new ArrayList<>();
 
-        addDogToList(animalList);  // This works because Animal is a superclass of Dog
+//        addDogToList(dogList);
+        // addDogToList(animalList);  // This works because Animal is a superclass of Dog
         addDogToList(objectList);  // This works because Object is a superclass of Dog
+
+//        System.out.println(dogList);
+//        System.out.println(animalList);
+        System.out.println(objectList);
 
     }
 }
