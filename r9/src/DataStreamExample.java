@@ -13,7 +13,7 @@ public class DataStreamExample {
         String stringData = "Hello, Data Stream!";
 
         // Writing to a file using DataOutputStream
-        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("dataOutput.txt"))) {
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("DataStreamExample.txt"))) {
             dos.writeInt(intData);
             dos.writeDouble(doubleData);
             dos.writeBoolean(boolData);
