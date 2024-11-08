@@ -29,7 +29,7 @@ class CounterThread extends Thread {
 
 public class RaceConditionExample {
     public static void main(String[] args) {
-        Counter counter = new Counter();
+        Counter counter = new Counter(); // We want to count 1,000,000
 
         // n threads
         int n = 1000;
