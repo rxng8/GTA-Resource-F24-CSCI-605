@@ -23,6 +23,8 @@ class ManualProducerConsumer {
         consumer.start();
         consumer2.start();
         consumer3.start();
+
+        // Please join! It is a good practice!
     }
 
     static class Producer implements Runnable {
@@ -48,7 +50,7 @@ class ManualProducerConsumer {
                 // Produce a number and add it to the list
                 synchronized (sharedList) {
                     if (sharedList.size() < MAX_SIZE) {
-                        sharedList.add(number++);
+                        sharedList.add(number++); // producing
                         System.out.println(this.name + " produced: " + (number - 1));
                     }
                 }
@@ -89,7 +91,7 @@ class ManualProducerConsumer {
                 // Consume the first number from the list
                 synchronized (sharedList) {
                     if (!sharedList.isEmpty()) {
-                        int number = sharedList.remove(0);
+                        int number = sharedList.remove(0); // consuming
                         System.out.println(this.name + " consumed: " + number);
                     }
                 }

@@ -89,5 +89,7 @@ public class ObjectSynchronization {
 
         // Final count value
         System.out.println("Final Count: " + counter.getCount());
+        // If thread2 and thread3 are not joined,
+        //   at the time this line executed, thread2 and thread3 is still running (counting up)
     }
 }

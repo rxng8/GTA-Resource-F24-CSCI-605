@@ -1,3 +1,5 @@
+package JoinExamples;
+
 class JoinExample implements Runnable {
     private String taskName;
     private int count;

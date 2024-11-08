@@ -15,7 +15,7 @@ class SharedResource {
             System.out.println("Producer is waiting: List is full.");
             wait(); // Wait until space is available
         }
-        list.add(value);
+        list.add(value); // producing
         System.out.println("Produced: " + value);
         notify(); // Notify the consumer that a new item is available
     }
@@ -26,7 +26,7 @@ class SharedResource {
             System.out.println("Consumer is waiting: List is empty.");
             wait(); // Wait until an item is available
         }
-        int value = list.removeFirst();
+        int value = list.removeFirst(); // consuming the first value
         System.out.println("Consumed: " + value);
         notify(); // Notify the producer that space is available
         return value;
