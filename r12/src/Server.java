@@ -6,6 +6,8 @@ public class Server {
     public static void main(String[] args) {
         int port = 12345; // Port number
         try (ServerSocket serverSocket = new ServerSocket(port)) {
+            // the socket that we listening on is localhost:12345
+            //  or 129.0.0.1:12345
             System.out.println("Server is listening on port " + port);
 
             // Wait for client connection
@@ -23,7 +25,7 @@ public class Server {
                 // Read and respond to client messages
                 while ((message = reader.readLine()) != null) {
                     System.out.println("Received: " + message);
-                    writer.println("Echo: " + message); // Echo back the message
+                    writer.println("Return message from the server: " + message); // Echo back the message
                 }
 
             } catch (IOException e) {

@@ -5,7 +5,7 @@ import java.net.*;
 public class Client {
     public static void main(String[] args) {
         String hostname = "localhost"; // Change to server IP if running on a different machine
-        int port = 8080;
+        int port = 12345;
 
         try (Socket socket = new Socket(hostname, port)) {
             System.out.println("Connected to the server!");
