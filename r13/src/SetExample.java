@@ -1,10 +1,13 @@
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 public class SetExample {
     public static void main(String[] args) {
         // Creating a Set of Strings
-        Set<String> fruits = new HashSet<>();
+        // both works
+        Collection<String> fruits = new HashSet<>();
+//        Set<String> fruits = new HashSet<>();
 
         // Adding elements to the Set
         fruits.add("Apple");
