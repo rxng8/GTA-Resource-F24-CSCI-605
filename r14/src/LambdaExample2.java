@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class LambdaExample2 {
     public static void main(String[] args) {
@@ -11,11 +12,14 @@ public class LambdaExample2 {
         numbers.add(25);
 
         // Use a lambda expression to filter numbers greater than 15
-        List<Integer> filteredNumbers = numbers.stream()
-                .filter(num -> num > 15)
-                .collect(Collectors.toList());
+        //List<Integer> filteredNumbers = numbers.stream().filter(num -> num > 15).collect(Collectors.toList());
+        Stream<Integer> intStream = numbers.stream();
+        Stream<Integer> filteredIntStream = intStream.filter(num -> num > 15);
+        List<Integer> collectedList = filteredIntStream.collect(Collectors.toList());
+
 
         // Print the filtered list
-        filteredNumbers.forEach(num -> System.out.println(num));
+        //filteredNumbers.forEach(num -> System.out.println(num));
+        collectedList.forEach(num -> System.out.println(num));
     }
 }

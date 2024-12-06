@@ -7,7 +7,7 @@ public class StreamExample4 {
         int start = 1, end = 1_000_000;
 
         // Use a parallel stream to calculate the sum of squares
-        long sumOfSquares = IntStream.rangeClosed(start, end)
+        long sumOfSquares = IntStream.rangeClosed(start, end) // stream of numbers: 1, 2, 3, ..., 1_000_000
                 .parallel() // Enable parallel processing
                 .map(n -> n * n) // Calculate square of each number
                 .asLongStream() // Convert to long stream to avoid overflow

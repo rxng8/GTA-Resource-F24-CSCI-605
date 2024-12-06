@@ -12,6 +12,9 @@ public class LambdaExample5 {
         numbers.add(1);
 
         // Sort the list in descending order using a lambda expression
+//        Collections.sort(numbers, (a, b) -> b - a);
+//        Collections.sort(numbers);
+//        Collections.sort(numbers, (a, b) -> b.compareTo(a));
         Collections.sort(numbers, (a, b) -> b - a);
 
         // Print the sorted list
